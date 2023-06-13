@@ -452,9 +452,10 @@ address {
   border: 1px solid var(--border-white);
   border-radius: 4px;
   display: block;
-  transition: background-color var(--animation-hover),
-    color var(--animation-hover), border var(--animation-hover),
-    box-shadow var(--animation-hover);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-btn:hover,
 .filter-btn:focus {
@@ -531,7 +532,7 @@ address {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
 
   width: 408px;
   min-height: 584px;
@@ -540,7 +541,8 @@ address {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  transition: transform 500ms ease-out, opacity 400ms linear 200ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 400ms linear 200ms;
 }
 .backdrop.is-hidden .modal-window {
   transform: translate(-50%, 100%);
@@ -562,8 +564,8 @@ address {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 
-  transition: background-color var(--animation-hover),
-    border var(--animation-hover), fill var(--animation-hover);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover,
 .modal-btn:focus {
