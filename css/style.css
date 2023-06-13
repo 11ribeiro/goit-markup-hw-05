@@ -566,7 +566,7 @@ address {
     border var(--animation-hover), fill var(--animation-hover);
 }
 .modal-btn:hover,
-.moda-btn:focus {
+.modal-btn:focus {
   background-color: var(--color-hover);
   border: none;
   fill: var(--color-white);
