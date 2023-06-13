@@ -9,6 +9,7 @@
   --ghost-white: #f4f4fd;
   --border-color: #8e8f99;
   --footer-hover: #31d0aa;
+  --border-white: #e7e9fc;
   --animation-hover: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
@@ -82,6 +83,15 @@ address {
   line-height: 1.5;
   letter-spacing: 0.04em;
 }
+
+.main-text,
+.contact,
+.footer,
+.overlay-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
 .link-hover,
 .customers-link {
   transition: color var(--animation-hover);
@@ -91,7 +101,7 @@ address {
 
 /* =====================================HEADER================================ */
 .header {
-  border-bottom: 1px solid #e7e9fc;
+  border-bottom: 1px solid var(--border-white);
   max-width: 1440px;
   margin: 0 auto;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -166,11 +176,6 @@ address {
 }
 .contact {
   font-style: normal;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  font-weight: 400;
   color: var(--color-grey);
   display: block;
   padding: 24px 0;
@@ -242,7 +247,7 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f4f4fd;
+  background-color: var(--ghost-white);
   border-radius: 4px;
   margin-bottom: 8px;
 }
@@ -255,9 +260,6 @@ address {
   margin-bottom: 8px;
 }
 .main-text {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
   color: var(--color-grey);
   font-weight: 400;
 }
@@ -323,7 +325,7 @@ address {
 }
 .team-social-link {
   border-radius: 50%;
-  background: #4d5ae5;
+  background: var(--color-blue);
   width: 40px;
   height: 40px;
   transition: background-color var(--animation-hover);
@@ -352,7 +354,7 @@ address {
   flex-basis: calc((100% - 120px) / 6);
 }
 .customers-link {
-  border: 1px solid #8e8f99;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
 
   width: 100%;
@@ -369,8 +371,8 @@ address {
 
 .customers-link:hover,
 .customers-link:focus {
-  border-color: #404bbf;
-  color: #404bbf;
+  border-color: var(--color-hover);
+  color: var(--color-hover);
 }
 .customers-icon {
   fill: currentColor;
@@ -380,9 +382,6 @@ address {
 /* ======================================FOOTER================================ */
 
 .footer {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
   color: var(--ghost-white);
   background-color: var(--color-navy);
   padding: 100px 0;
@@ -450,7 +449,7 @@ address {
   letter-spacing: 0.04em;
   color: var(--color-blue);
   background-color: var(--ghost-white);
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--border-white);
   border-radius: 4px;
   display: block;
   transition: background-color var(--animation-hover),
@@ -487,34 +486,30 @@ address {
   overflow: hidden;
 }
 .overlay-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #f4f4fd;
-  padding: 40px 32px 164px;
+  color: var(--ghost-white);
+  padding: 40px 32px;
 
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--color-hover);
+  background-color: var(--color-blue);
   transform: translateY(100%);
   transition: transform var(--animation-hover);
 }
-.benefits-link:hover .overlay-text {
+.benefits-link:hover .overlay-text,
+.benefits-link:focus .overlay-text {
   transform: translateY(0);
 }
 .benefits-card-content {
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--border-white);
   border-top: none;
   padding: 32px 16px;
 }
 /* ==============================/PORTFOLIO PAGE============================== */
-/* ==============================BACKDROP PAGE============================== */
 
-/* ==============================/BACKDROP PAGE============================== */
+/* ==============================BACKDROP PAGE============================== */
 .backdrop {
   position: fixed;
   top: 0;
@@ -545,7 +540,7 @@ address {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  transition: transform var(--animation-hover);
+  transition: transform 500ms ease-out, opacity 400ms linear 200ms;
 }
 .backdrop.is-hidden .modal-window {
   transform: translate(-50%, 100%);
@@ -558,17 +553,22 @@ address {
   right: 24px;
   width: 24px;
   height: 24px;
+  padding: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e7e9fc;
+  background: var(--border-white);
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 
-  transition: background-color var(--animation-hover);
+  transition: background-color var(--animation-hover),
+    border var(--animation-hover), fill var(--animation-hover);
 }
 .modal-btn:hover,
-.moda-btn-focus {
+.moda-btn:focus {
   background-color: var(--color-hover);
+  border: none;
+  fill: var(--color-white);
 }
+/* ==============================/BACKDROP PAGE============================== */
